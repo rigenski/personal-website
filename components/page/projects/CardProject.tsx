@@ -17,7 +17,7 @@ const CardProject = (props: ProjectProps) => {
   const { layout, project } = props;
 
   return (
-    <div className="card__item flex flex-col mb-4 bg-white shadow-lg rounded-xl md:flex-row md:shadow-none md:mb-8 md:bg-none md:rounded-none">
+    <div className="card__item flex flex-col mb-4 bg-white shadow-lg rounded-xl md:flex-row md:shadow-none md:mb-8 md:bg-transparent md:rounded-none">
       <div
         className={`card__image w-full ${
           layout ? "order-1 md:order-2" : ""
@@ -32,8 +32,8 @@ const CardProject = (props: ProjectProps) => {
       >
         <div>
           <h2 className="text-2xl font-bold md:text-3xl">{project.title}</h2>
-          <p className="text-base md:text-lg">{project.desc}</p>
-          <ul className="flex mt-2 justify-center md:justify-start">
+          <p className="text-base mt-1 md:text-lg">{project.desc}</p>
+          <ul className="flex mt-1 justify-center md:justify-start">
             {project.tag.map((item, index) => {
               return (
                 <li key={index} className="mx-1 md:mx-0 md:mr-2">

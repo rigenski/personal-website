@@ -25,7 +25,7 @@ const Layout = (props: LayoutProps) => {
         />
       </Head>
       <Navbar />
-      <main className="bg-gray-50">{children}</main>
+      <main className="h-100 bg-gray-50 ">{children}</main>
     </>
   );
 };

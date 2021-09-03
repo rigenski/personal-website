@@ -18,35 +18,6 @@
 }
 
 @layer base {
-  .nav--show {
-    @apply block;
-    @apply absolute;
-    @apply w-full;
-    @apply -ml-4;
-    @apply -mb-0.5;
-    @apply bottom-16;
-    @apply bg-white;
-  }
-
-  .nav--show ul {
-    @apply flex-col;
-    @apply w-full;
-    @apply p-4;
-  }
-
-  .nav--show li {
-    @apply w-full;
-    @apply mt-3;
-    @apply border-2;
-    @apply border-gray-800;
-    @apply text-center;
-  }
-
-  .nav--show li a {
-    @apply block;
-    @apply py-2;
-  }
-
   #side img {
     @apply object-cover;
     @apply w-60;
