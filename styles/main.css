@@ -1,0 +1,77 @@
+/* ./styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .border-rainbow {
+    border-image: linear-gradient(
+      to bottom right,
+      #b827fc 0%,
+      #2c90fc 25%,
+      #b8fd33 50%,
+      #fec837 75%,
+      #fd1892 100%
+    );
+    border-image-slice: 1;
+  }
+}
+
+@layer base {
+  .nav--show {
+    @apply block;
+    @apply absolute;
+    @apply w-full;
+    @apply -ml-4;
+    @apply -mb-0.5;
+    @apply bottom-16;
+    @apply bg-white;
+  }
+
+  .nav--show ul {
+    @apply flex-col;
+    @apply w-full;
+    @apply p-4;
+  }
+
+  .nav--show li {
+    @apply w-full;
+    @apply mt-3;
+    @apply border-2;
+    @apply border-gray-800;
+    @apply text-center;
+  }
+
+  .nav--show li a {
+    @apply block;
+    @apply py-2;
+  }
+
+  #side img {
+    @apply object-cover;
+    @apply w-60;
+    @apply h-60;
+    @apply md:w-full;
+    @apply md:h-60;
+  }
+
+  #side div {
+    @apply w-60;
+    @apply md:w-full;
+  }
+
+  .card__image img {
+    @apply object-cover;
+    @apply h-56;
+    @apply sm:h-72;
+    @apply md:h-60;
+    @apply w-full;
+    @apply rounded-tr-xl;
+    @apply rounded-tl-xl;
+    @apply md:rounded-xl;
+  }
+
+  .card__image div {
+    @apply w-full;
+  }
+}
