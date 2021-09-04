@@ -1,14 +1,16 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { FaBars, FaToggleOff, FaToggleOn } from "react-icons/fa";
 import navlinksJSON from "../../data/navlinks.json";
 
 const Navbar = () => {
   const [drawer, setDrawer] = useState(false);
+  const [darkTheme, setDarkTheme] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [screenWidht, setScreenWidht] = useState(0);
   const navlinks = navlinksJSON;
 
-  const initDrawer = () => {
+  const onDrawerClick = () => {
     const body = document.querySelector("body");
 
     if (drawer) {
@@ -20,8 +22,16 @@ const Navbar = () => {
     }
   };
 
-  const onDrawerClick = () => {
-    initDrawer();
+  const onToggleClick = () => {
+    const body = document.querySelector("body");
+
+    if (darkTheme) {
+      body?.classList.remove("dark");
+      setDarkTheme(false);
+    } else {
+      body?.classList.add("dark");
+      setDarkTheme(true);
+    }
   };
 
   useEffect(() => {
@@ -31,13 +41,13 @@ const Navbar = () => {
   }, [scrollY]);
 
   useEffect(() => {
+    if (screenWidht > 768 && drawer) {
+      onDrawerClick();
+    }
+
     window.addEventListener("resize", () => {
       setScreenWidht(window.innerWidth);
     });
-
-    if (screenWidht > 768 && drawer) {
-      initDrawer();
-    }
   }, [screenWidht]);
 
   useEffect(() => {
@@ -46,38 +56,28 @@ const Navbar = () => {
     }
   }, []);
 
-  if (drawer) {
+  if (screenWidht > 768) {
     return (
       <>
-        <div
-          id="bg__navbar"
-          className="fixed h-screen w-full z-30 bg-black bg-opacity-50"
-          onClick={() => onDrawerClick()}
-        ></div>
         <header
-          className={`fixed w-full z-40 bottom-0 top-auto md:bottom-auto md:top-0 ${
-            screenWidht > 768 && scrollY > 10
-              ? "bg-white shadow-md"
-              : screenWidht > 768 && scrollY < 10
-              ? ""
-              : "bg-white shadow-md"
+          className={`fixed w-full z-40 top-0 bottom-auto ${
+            scrollY > 10 ? "bg-white shadow-md dark:bg-black" : ""
           }`}
         >
-          <div className="container mx-auto px-4 py-4 max-w-screen-lg md:py-6">
+          <div className="container mx-auto px-4 py-6 max-w-screen-lg">
             <div className="flex justify-between">
               <Link href="/">
-                <a className="text-2xl font-bold leading-none">nexzy</a>
+                <a className="text-2xl font-bold leading-none dark:text-white">
+                  nexzy
+                </a>
               </Link>
-              <nav className="overflow-hidden block absolute w-full -ml-4 -mb-0.5 bottom-16 bg-white md:block">
-                <ul className="flex flex-col w-full p-4 items-end">
+              <nav className="flex items-center overflow-hidden">
+                <ul className="flex items-end">
                   {navlinks.map((item, index) => {
                     return (
-                      <li
-                        key={index}
-                        className="w-full mt-3 border-2 border-gray-800 text-center"
-                      >
+                      <li key={index} className="ml-6">
                         <Link href={item.url}>
-                          <a className="text-base font-bold block py-2 md:text-lg">
+                          <a className="text-lg font-bold dark:text-white">
                             {item.name}
                           </a>
                         </Link>
@@ -85,23 +85,17 @@ const Navbar = () => {
                     );
                   })}
                 </ul>
-              </nav>
-              <div className="block md:hidden">
-                <button onClick={() => onDrawerClick()}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    className="w-6 h-6"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                <button
+                  className="ml-8 dark:text-white"
+                  onClick={() => onToggleClick()}
+                >
+                  {darkTheme ? (
+                    <FaToggleOn size="28" />
+                  ) : (
+                    <FaToggleOff size="28" />
+                  )}
                 </button>
-              </div>
+              </nav>
             </div>
           </div>
         </header>
@@ -110,56 +104,64 @@ const Navbar = () => {
   } else {
     return (
       <>
-        <div
-          id="bg__navbar"
-          className="fixed h-screen w-full hidden z-30 bg-black bg-opacity-50"
-          onClick={() => onDrawerClick()}
-        ></div>
-        <header
-          className={`fixed w-full z-40 bottom-0 top-auto md:bottom-auto md:top-0 ${
-            screenWidht > 768 && scrollY > 10
-              ? "bg-white shadow-md"
-              : screenWidht > 768 && scrollY < 10
-              ? ""
-              : "bg-white shadow-md"
-          }`}
-        >
+        {drawer ? (
+          <div
+            id="bg__navbar"
+            className="fixed h-screen w-full z-30 bg-black bg-opacity-75"
+            onClick={() => onDrawerClick()}
+          ></div>
+        ) : (
+          ""
+        )}
+        <header className="fixed w-full z-40 top-auto bottom-0 bg-white shadow-md dark:bg-black">
           <div className="container mx-auto px-4 py-4 max-w-screen-lg md:py-6">
             <div className="flex justify-between">
-              <Link href="/">
-                <a className="text-2xl font-bold leading-none">nexzy</a>
-              </Link>
-              <nav className="overflow-hidden hidden md:block">
-                <ul className="flex items-end">
-                  {navlinks.map((item, index) => {
-                    return (
-                      <li key={index} className="ml-8">
-                        <Link href={item.url}>
-                          <a className="text-base font-bold md:text-lg">
-                            {item.name}
-                          </a>
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </nav>
-              <div className="block md:hidden">
-                <button onClick={() => onDrawerClick()}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    className="w-6 h-6"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+              {drawer ? (
+                <button
+                  className="dark:text-white"
+                  onClick={() => onToggleClick()}
+                >
+                  {darkTheme ? (
+                    <FaToggleOn size="26" />
+                  ) : (
+                    <FaToggleOff size="26" />
+                  )}
                 </button>
-              </div>
+              ) : (
+                <Link href="/">
+                  <a className="text-2xl font-bold leading-none dark:text-white">
+                    nexzy
+                  </a>
+                </Link>
+              )}
+              {drawer ? (
+                <nav className="block absolute w-full -ml-4 -mb-2 bottom-16 bg-white dark:bg-black">
+                  <ul className="flex flex-col w-full p-4 items-end">
+                    {navlinks.map((item, index) => {
+                      return (
+                        <li key={index} className="w-full mt-3 text-center">
+                          <Link href={item.url}>
+                            <a
+                              className="text-base font-bold block py-2 border-2 border-black dark:text-white dark:border-white"
+                              onClick={() => onDrawerClick()}
+                            >
+                              {item.name}
+                            </a>
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </nav>
+              ) : (
+                ""
+              )}
+              <button
+                className="dark:text-white"
+                onClick={() => onDrawerClick()}
+              >
+                <FaBars size="20" />
+              </button>
             </div>
           </div>
         </header>

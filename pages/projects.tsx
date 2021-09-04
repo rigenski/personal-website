@@ -10,9 +10,11 @@ const Home = (props: ProjectsProps) => {
 
   return (
     <>
-      <div className="container mx-auto p-4 pt-16 pb-32 max-w-screen-lg text-gray-900 md:pt-32 md:pb-16">
+      <div className="container mx-auto p-4 pt-16 pb-32 max-w-screen-lg md:pt-32 md:pb-16">
         <div className="text-center">
-          <h1 className="text-4xl font-bold md:text-5xl">Projects</h1>
+          <h1 className="text-4xl font-bold md:text-5xl dark:text-white">
+            Projects
+          </h1>
         </div>
         <div className="flex flex-col mt-12">
           {projects.map((item, index) => {

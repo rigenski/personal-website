@@ -10,5 +10,9 @@
     {
         "name": "Experience",
         "url": "/experience"
+    },
+    {
+        "name": "Blog",
+        "url": "/blog"
     }
 ]
