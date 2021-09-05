@@ -114,11 +114,11 @@ const Navbar = () => {
           ""
         )}
         <header className="fixed w-full z-40 top-auto bottom-0 bg-white shadow-md dark:bg-black">
-          <div className="container mx-auto px-4 py-4 max-w-screen-lg md:py-6">
+          <div className="container mx-auto px-4 max-w-screen-lg md:py-6">
             <div className="flex justify-between">
               {drawer ? (
                 <button
-                  className="dark:text-white"
+                  className="pr-4 py-4 dark:text-white"
                   onClick={() => onToggleClick()}
                 >
                   {darkTheme ? (
@@ -129,7 +129,7 @@ const Navbar = () => {
                 </button>
               ) : (
                 <Link href="/">
-                  <a className="text-2xl font-bold leading-none dark:text-white">
+                  <a className="text-2xl pr-4 py-4 font-bold leading-none dark:text-white">
                     nexzy
                   </a>
                 </Link>
@@ -157,7 +157,7 @@ const Navbar = () => {
                 ""
               )}
               <button
-                className="dark:text-white"
+                className="pl-4 py-4 dark:text-white"
                 onClick={() => onDrawerClick()}
               >
                 <FaBars size="20" />
