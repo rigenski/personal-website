@@ -1,34 +1,17 @@
 [
-    {
-        "name": "HTML",
-        "image": "https://img.icons8.com/color/96/000000/html-5--v1.png" 
-    },
-    {
-        "name": "CSS",
-        "image": "https://img.icons8.com/color/96/000000/css3.png"
-    },
-    {
-        "name": "Javascript",
-        "image": "https://img.icons8.com/color/96/000000/javascript--v1.png"
-    },
-    {
-        "name": "Typescript",
-        "image": "https://img.icons8.com/color/96/000000/typescript.png"
-    },
-    {
-        "name": "React",
-        "image": "https://img.icons8.com/color/96/000000/react-native.png"
-    },
-    {
-        "name": "Bootstrap",
-        "image": "https://img.icons8.com/color/96/000000/bootstrap.png"
-    },
-    {
-        "name": "Figma",
-        "image": "https://img.icons8.com/color/96/000000/figma.png"
-    },
-    {
-        "name": "Photoshop",
-        "image": "https://img.icons8.com/color/48/000000/adobe-photoshop.png"
-    }
+    "HTML5",
+    "CSS3",
+    "Javascript",
+    "Typescript",
+    "Bootstrap",
+    "TailwindCSS",
+    "React",
+    "NextJS",
+    "PHP",
+    "Laravel",
+    "NodeJS",
+    "MySQL",
+    "MongoDB",
+    "Photoshop",
+    "Figma"
 ]

@@ -1,5 +1,6 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import Head from "next/head";
+import "devicon";
 import Navbar from "./nav/Navbar";
 
 interface LayoutProps {

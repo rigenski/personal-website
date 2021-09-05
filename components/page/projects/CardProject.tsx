@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import { FaGithub, FaLink } from "react-icons/fa";
 
@@ -17,7 +16,7 @@ const CardProject = (props: ProjectProps) => {
   const { layout, project } = props;
 
   return (
-    <div className="card__item flex flex-col mb-4 bg-white shadow-lg rounded-xl md:flex-row md:shadow-none md:mb-8 md:bg-transparent md:rounded-none dark:bg-black">
+    <div className="card__item flex flex-col mb-4 bg-white shadow-lg rounded-xl md:flex-row md:shadow-none md:mb-8 md:bg-transparent md:rounded-none">
       <div
         className={`card__image w-full ${
           layout ? "order-1 md:order-2" : ""
@@ -50,11 +49,11 @@ const CardProject = (props: ProjectProps) => {
           </ul>
         </div>
         <div className="flex justify-center mt-2 md:justify-start md:mt-0">
-          <button className="flex items-center bg-gray-800 text-white px-4 py-2 rounded text-base font-medium mr-1 md:mr-0 md:text-lg dark:bg-white dark:text-black">
+          <button className="flex items-center bg-gray-800 text-white px-4 py-2 rounded text-base font-medium mr-1 transform hover:-translate-y-1 md:mr-0 md:text-lg dark:bg-white dark:text-black">
             <FaGithub size={18} />
             <span className="ml-2">GitHub</span>
           </button>
-          <button className="flex items-center bg-gray-800 text-white px-4 py-2 rounded text-base font-medium ml-1 md:ml-2  md:text-lg dark:bg-white dark:text-black">
+          <button className="flex items-center bg-gray-800 text-white px-4 py-2 rounded text-base font-medium ml-1 transform hover:-translate-y-1 md:ml-2 md:text-lg dark:bg-white dark:text-black">
             <FaLink />
             <span className="ml-2">Demo</span>
           </button>

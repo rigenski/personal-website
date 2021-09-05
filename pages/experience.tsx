@@ -1,4 +1,3 @@
-import React from "react";
 import CardSkill from "../components/page/experience/CardSkill";
 import skillsJSON from "../data/skills.json";
 
@@ -32,7 +31,7 @@ const Experience = (props: ExperienceProps) => {
                 Skills
               </h2>
             </div>
-            <div className="flex flex-row flex-wrap mt-8">
+            <div className="flex flex-row flex-wrap justify-center mt-8">
               {skills.map((item, index) => {
                 return <CardSkill key={index} skill={item} />;
               })}

@@ -29,7 +29,7 @@ const Home: NextPage = () => {
             </p>
             <Link href="/experience">
               <a>
-                <button className="text-base font-bold border-4 border-rainbow px-8 py-3 mt-8 sm:text-lg dark:text-white">
+                <button className="text-base font-bold border-4 border-rainbow px-8 py-3 mt-8 transform hover:-translate-y-2 sm:text-lg dark:text-white">
                   Experience
                 </button>
               </a>
@@ -42,35 +42,50 @@ const Home: NextPage = () => {
                 <li className="mx-auto md:mx-0 md:mr-6">
                   <Link href="#github">
                     <a className="dark:text-white">
-                      <FaGithub size={48} />
+                      <FaGithub
+                        size={48}
+                        className="transform hover:scale-110"
+                      />
                     </a>
                   </Link>
                 </li>
                 <li className="mx-auto md:mx-0 md:mr-6">
                   <Link href="#facebook">
                     <a className="dark:text-white">
-                      <FaFacebook size={48} />
+                      <FaFacebook
+                        size={48}
+                        className="transform hover:scale-110"
+                      />
                     </a>
                   </Link>
                 </li>
                 <li className="mx-auto md:mx-0 md:mr-6">
                   <Link href="#instagram">
                     <a className="dark:text-white">
-                      <FaInstagram size={48} />
+                      <FaInstagram
+                        size={48}
+                        className="transform hover:scale-110"
+                      />
                     </a>
                   </Link>
                 </li>
                 <li className="mx-auto md:mx-0 md:mr-6">
                   <Link href="#linkedin">
                     <a className="dark:text-white">
-                      <FaLinkedin size={48} />
+                      <FaLinkedin
+                        size={48}
+                        className="transform hover:scale-110"
+                      />
                     </a>
                   </Link>
                 </li>
                 <li className="mx-auto md:mx-0 md:mr-6">
                   <Link href="#telegram">
                     <a className="dark:text-white">
-                      <FaTelegram size={48} />
+                      <FaTelegram
+                        size={48}
+                        className="transform hover:scale-110"
+                      />
                     </a>
                   </Link>
                 </li>
@@ -87,12 +102,12 @@ const Home: NextPage = () => {
               height="240"
               alt="Rigen Maulana Profile Picture"
             ></Image>
-            <h4 className="text-lg font-bold mt-8 sm:text-xl">
+            <h4 className="text-lg font-bold mt-8 sm:text-xl dark:text-white">
               Any Question or Hiring ?
             </h4>
             <Link href="/">
               <a>
-                <button className="text-base font-bold text-white bg-black px-8 py-3 mt-4 sm:text-lg dark:bg-white dark:text-black">
+                <button className="text-base font-bold text-white bg-black px-8 py-3 mt-4 transform hover:-translate-y-2 sm:text-lg dark:bg-white dark:text-black">
                   Contact Me .
                 </button>
               </a>
