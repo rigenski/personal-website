@@ -16,7 +16,7 @@ const Home: NextPage = () => {
         <div className="flex flex-col text-center md:flex-row md:text-left">
           <div className="w-full pr-0 md:pr-16 md:w-3/4">
             <h1 className="text-2xl font-bold sm:text-4xl dark:text-white">
-              Hello, I&apos;m nexzy.
+              Hello, I&apos;m rygenzx.
             </h1>
             <h1 className="text-3xl font-bold sm:text-5xl dark:text-white">
               Software Developer
@@ -98,12 +98,13 @@ const Home: NextPage = () => {
           <div id="side" className="w-full md:w-1/4">
             <Image
               src="/img/profile.jpg"
+              height="100"
               width="100%"
-              height="240"
+              quality={100}
               alt="Rigen Maulana Profile Picture"
             ></Image>
-            <h4 className="text-lg font-bold mt-8 sm:text-xl dark:text-white">
-              Any Question or Hiring ?
+            <h4 className="text-lg font-bold mt-12 sm:text-xl dark:text-white">
+              Any Question or Hiring .. ?
             </h4>
             <Link href="/">
               <a>

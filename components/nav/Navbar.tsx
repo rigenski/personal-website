@@ -68,7 +68,7 @@ const Navbar = () => {
             <div className="flex justify-between">
               <Link href="/">
                 <a className="text-2xl font-bold leading-none dark:text-white">
-                  nexzy
+                  rygenzx
                 </a>
               </Link>
               <nav className="flex items-center overflow-hidden">

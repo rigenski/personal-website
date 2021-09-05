@@ -16,7 +16,7 @@ const CardProject = (props: ProjectProps) => {
   const { layout, project } = props;
 
   return (
-    <div className="card__item flex flex-col mb-4 bg-white shadow-lg rounded-xl md:flex-row md:shadow-none md:mb-8 md:bg-transparent md:rounded-none">
+    <div className="card__item flex flex-col mb-4 bg-white shadow-lg rounded-xl md:flex-row md:shadow-none md:mb-8 md:rounded-none dark:bg-black">
       <div
         className={`card__image w-full ${
           layout ? "order-1 md:order-2" : ""

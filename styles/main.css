@@ -29,11 +29,6 @@
     @apply md:h-60;
   }
 
-  #side div {
-    @apply w-60;
-    @apply md:w-full;
-  }
-
   .card__image img {
     @apply object-cover;
     @apply h-56;

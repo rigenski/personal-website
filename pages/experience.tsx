@@ -19,11 +19,13 @@ const Experience = (props: ExperienceProps) => {
             <h2 className="text-3xl font-bold text-left  md:text-4xl dark:text-white">
               Education
             </h2>
+            <div className="mt-8"></div>
           </div>
           <div className="mt-8">
             <h2 className="text-3xl font-bold text-right md:text-4xl dark:text-white">
               Achievements
             </h2>
+            <div className="mt-8"></div>
           </div>
           <div className="mt-8">
             <div className="flex justify-center">
