@@ -77,7 +77,7 @@ const ProjectCard = (props: ProjectProps) => {
             >
               <FontAwesomeIcon
                 icon={["fas", "link"]}
-                className="text-whitfa-sme dark:text-black"
+                className="text-white fa-sm dark:text-black"
               />
               <span className="ml-2 text-white dark:text-black">Demo</span>
             </button>

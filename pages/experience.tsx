@@ -68,7 +68,7 @@ const Experience = (props: ExperienceProps) => {
                       </h6>
                       <FontAwesomeIcon
                         icon={["fas", "trophy"]}
-                        className="order-1 fa-lg sm:order-2 text-yellow-500"
+                        className="order-1 h-6 text-2xl sm:order-2 text-yellow-500"
                       />
                     </div>
                   </li>
@@ -79,7 +79,7 @@ const Experience = (props: ExperienceProps) => {
                       </h6>
                       <FontAwesomeIcon
                         icon={["fas", "trophy"]}
-                        className="order-1 fa-lg sm:order-2 text-yellow-500"
+                        className="order-1 h-6 text-2xl sm:order-2 text-yellow-500"
                       />
                     </div>
                   </li>
