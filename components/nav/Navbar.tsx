@@ -98,9 +98,15 @@ const Navbar = () => {
                   onClick={() => onToggleClick()}
                 >
                   {darkTheme ? (
-                    <FontAwesomeIcon icon={["fas", "toggle-on"]} height="24" />
+                    <FontAwesomeIcon
+                      icon={["fas", "toggle-on"]}
+                      className="fa-lg"
+                    />
                   ) : (
-                    <FontAwesomeIcon icon={["fas", "toggle-off"]} height="24" />
+                    <FontAwesomeIcon
+                      icon={["fas", "toggle-off"]}
+                      className="fa-lg"
+                    />
                   )}
                 </button>
               </nav>
@@ -130,9 +136,15 @@ const Navbar = () => {
                   onClick={() => onToggleClick()}
                 >
                   {darkTheme ? (
-                    <FontAwesomeIcon icon={["fas", "toggle-on"]} height="24" />
+                    <FontAwesomeIcon
+                      icon={["fas", "toggle-on"]}
+                      className="fa-lg"
+                    />
                   ) : (
-                    <FontAwesomeIcon icon={["fas", "toggle-off"]} height="24" />
+                    <FontAwesomeIcon
+                      icon={["fas", "toggle-off"]}
+                      className="fa-lg"
+                    />
                   )}
                 </button>
               ) : (
@@ -168,7 +180,7 @@ const Navbar = () => {
                 className="pl-4 py-4 dark:text-white"
                 onClick={() => onDrawerClick()}
               >
-                <FontAwesomeIcon icon={["fas", "bars"]} className="h-6" />
+                <FontAwesomeIcon icon={["fas", "bars"]} className="fa-lg" />
               </button>
             </div>
           </div>
