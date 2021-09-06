@@ -68,10 +68,8 @@ const Experience = (props: ExperienceProps) => {
                       </h6>
                       <FontAwesomeIcon
                         icon={["fas", "trophy"]}
-                        height="24"
-                        size="sm"
                         className="order-1 sm:order-2 text-yellow-500"
-                        fixedWidth
+                        style={{ height: "24px" }}
                       />
                     </div>
                   </li>
@@ -82,10 +80,8 @@ const Experience = (props: ExperienceProps) => {
                       </h6>
                       <FontAwesomeIcon
                         icon={["fas", "trophy"]}
-                        height="24"
-                        size="sm"
                         className="order-1 sm:order-2 text-yellow-500"
-                        fixedWidth
+                        style={{ height: "24px" }}
                       />
                     </div>
                   </li>
