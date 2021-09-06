@@ -98,15 +98,9 @@ const Navbar = () => {
                   onClick={() => onToggleClick()}
                 >
                   {darkTheme ? (
-                    <FontAwesomeIcon
-                      icon={["fas", "toggle-on"]}
-                      className="h-6"
-                    />
+                    <FontAwesomeIcon icon={["fas", "toggle-on"]} height="24" />
                   ) : (
-                    <FontAwesomeIcon
-                      icon={["fas", "toggle-off"]}
-                      className="h-6"
-                    />
+                    <FontAwesomeIcon icon={["fas", "toggle-off"]} height="24" />
                   )}
                 </button>
               </nav>
@@ -136,15 +130,9 @@ const Navbar = () => {
                   onClick={() => onToggleClick()}
                 >
                   {darkTheme ? (
-                    <FontAwesomeIcon
-                      icon={["fas", "toggle-on"]}
-                      className="h-6"
-                    />
+                    <FontAwesomeIcon icon={["fas", "toggle-on"]} height="24" />
                   ) : (
-                    <FontAwesomeIcon
-                      icon={["fas", "toggle-off"]}
-                      className="h-6"
-                    />
+                    <FontAwesomeIcon icon={["fas", "toggle-off"]} height="24" />
                   )}
                 </button>
               ) : (

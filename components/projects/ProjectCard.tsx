@@ -66,7 +66,8 @@ const ProjectCard = (props: ProjectProps) => {
           >
             <FontAwesomeIcon
               icon={["fab", "github"]}
-              className="h-4 text-white  dark:text-black"
+              height="18"
+              className="text-white  dark:text-black"
             />
             <span className="ml-2 text-white dark:text-black">GitHub</span>
           </button>
@@ -77,7 +78,8 @@ const ProjectCard = (props: ProjectProps) => {
             >
               <FontAwesomeIcon
                 icon={["fas", "link"]}
-                className="h-4 text-white dark:text-black"
+                height="18"
+                className="text-white dark:text-black"
               />
               <span className="ml-2 text-white dark:text-black">Demo</span>
             </button>
