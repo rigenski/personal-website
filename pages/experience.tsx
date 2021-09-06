@@ -1,5 +1,10 @@
-import CardSkill from "../components/page/experience/CardSkill";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faTrophy } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import skillsJSON from "../data/skills.json";
+import SkillCard from "../components/experience/SkillCard";
+
+library.add(faTrophy);
 
 interface ExperienceProps {
   skills: Array<any>;
@@ -17,15 +22,70 @@ const Experience = (props: ExperienceProps) => {
         <div className="flex flex-col mt-12">
           <div>
             <h2 className="text-3xl font-bold text-left  md:text-4xl dark:text-white">
-              Education
+              Work
             </h2>
-            <div className="mt-8"></div>
+            <div className="mt-8">
+              <div className="relative mx-0 md:mx-12">
+                <div className="border-r-8 border-black absolute h-full left-1.5 sm:left-2 top-0 dark:border-white" />
+                <ul>
+                  <li className="mb-4">
+                    <div className="flex items-center mb-0.5">
+                      <div className="bg-black rounded-full h-6 w-6 dark:bg-white" />
+                      <h6 className="text-lg ml-4 font-semibold md:text-xl md:ml-4 dark:text-white">
+                        Januari - Maret 2021 | PT. GIT Solution - Internship
+                      </h6>
+                    </div>
+                    <div className="ml-12 dark:text-white">
+                      Description in here ...
+                    </div>
+                  </li>
+                  <li className="mb-4">
+                    <div className="flex items-center mb-0.5">
+                      <div className="bg-black rounded-full h-6 w-6 dark:bg-white" />
+                      <h6 className="text-lg ml-4 font-semibold md:text-xl md:ml-4 dark:text-white">
+                        Maret - Mei 2021 | M-One Tech Solution - Internship
+                      </h6>
+                    </div>
+                    <div className="ml-12 dark:text-white">
+                      Description in here ...
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div className="mt-8">
             <h2 className="text-3xl font-bold text-right md:text-4xl dark:text-white">
               Achievements
             </h2>
-            <div className="mt-8"></div>
+            <div className="mt-8">
+              <div className="mx-0 md:mx-12">
+                <ul>
+                  <li className="mb-2">
+                    <div className="flex items-center justify-start sm:justify-end mb-1">
+                      <h6 className="order-2 sm:order-1 ml-4 sm:mr-4 text-lg font-semibold md:text-xl dark:text-white">
+                        KKSI Smart App for School
+                      </h6>
+                      <FontAwesomeIcon
+                        icon={["fas", "trophy"]}
+                        className="order-1 sm:order-2 h-6 text-yellow-500"
+                      />
+                    </div>
+                  </li>
+                  <li className="mb-2">
+                    <div className="flex items-center justify-start sm:justify-end mb-1">
+                      <h6 className="order-2 sm:order-1 ml-4 sm:mr-4 text-lg font-semibold md:text-xl dark:text-white">
+                        LKS Web Technologies at Provinsi Jawa Tengah
+                      </h6>
+                      <FontAwesomeIcon
+                        icon={["fas", "trophy"]}
+                        className="order-1 sm:order-2 h-6 text-yellow-500"
+                      />
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div className="mt-8">
             <div className="flex justify-center">
@@ -35,7 +95,7 @@ const Experience = (props: ExperienceProps) => {
             </div>
             <div className="flex flex-row flex-wrap justify-center mt-8">
               {skills.map((item, index) => {
-                return <CardSkill key={index} skill={item} />;
+                return <SkillCard key={index} skill={item} />;
               })}
             </div>
           </div>

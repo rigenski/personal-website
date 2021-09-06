@@ -1,7 +1,15 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FaBars, FaToggleOff, FaToggleOn } from "react-icons/fa";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faBars,
+  faToggleOff,
+  faToggleOn,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import navlinksJSON from "../../data/navlinks.json";
+
+library.add(faBars, faToggleOff, faToggleOn);
 
 const Navbar = () => {
   const [drawer, setDrawer] = useState(false);
@@ -90,9 +98,15 @@ const Navbar = () => {
                   onClick={() => onToggleClick()}
                 >
                   {darkTheme ? (
-                    <FaToggleOn size="28" />
+                    <FontAwesomeIcon
+                      icon={["fas", "toggle-on"]}
+                      className="h-6"
+                    />
                   ) : (
-                    <FaToggleOff size="28" />
+                    <FontAwesomeIcon
+                      icon={["fas", "toggle-off"]}
+                      className="h-6"
+                    />
                   )}
                 </button>
               </nav>
@@ -122,15 +136,21 @@ const Navbar = () => {
                   onClick={() => onToggleClick()}
                 >
                   {darkTheme ? (
-                    <FaToggleOn size="26" />
+                    <FontAwesomeIcon
+                      icon={["fas", "toggle-on"]}
+                      className="h-6"
+                    />
                   ) : (
-                    <FaToggleOff size="26" />
+                    <FontAwesomeIcon
+                      icon={["fas", "toggle-off"]}
+                      className="h-6"
+                    />
                   )}
                 </button>
               ) : (
                 <Link href="/">
                   <a className="text-2xl pr-4 py-4 font-bold leading-none dark:text-white">
-                    nexzy
+                    rygenzx
                   </a>
                 </Link>
               )}
@@ -160,7 +180,7 @@ const Navbar = () => {
                 className="pl-4 py-4 dark:text-white"
                 onClick={() => onDrawerClick()}
               >
-                <FaBars size="20" />
+                <FontAwesomeIcon icon={["fas", "bars"]} className="h-6" />
               </button>
             </div>
           </div>

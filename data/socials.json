@@ -1,0 +1,22 @@
+[
+    {
+        "name": "github",
+        "url": "https://github.com/"
+    },
+    {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/"
+    },
+    {
+        "name": "facebook",
+        "url": "https://www.facebook.com/"
+    },
+    {
+        "name": "instagram",
+        "url": "https://www.instagram.com/"
+    },
+    {
+        "name": "telegram",
+        "url": "https://www.telegram.com/"
+    }
+]

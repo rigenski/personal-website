@@ -2,7 +2,7 @@ interface SkillProps {
   skill: string;
 }
 
-const CardSkill = (props: SkillProps) => {
+const SkillCard = (props: SkillProps) => {
   const { skill } = props;
 
   return (
@@ -11,10 +11,12 @@ const CardSkill = (props: SkillProps) => {
         <i
           className={`devicon-${skill.toLowerCase()}-plain colored text-6xl`}
         ></i>
-        <h6 className="mt-2 text-xl font-bold dark:text-white">{skill}</h6>
+        <h6 className="mt-2 text-lg font-bold md:text-xl dark:text-white">
+          {skill}
+        </h6>
       </div>
     </div>
   );
 };
 
-export default CardSkill;
+export default SkillCard;

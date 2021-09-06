@@ -1,15 +1,14 @@
-import type { NextPage } from "next";
 import Link from "next/link";
-import Image from "next/image";
-import {
-  FaFacebook,
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-  FaTelegram,
-} from "react-icons/fa";
+import SocialButton from "../components/home/SocialButton";
+import socialsJSON from "../data/socials.json";
 
-const Home: NextPage = () => {
+interface HomeProps {
+  socials: Array<any>;
+}
+
+const Home = (props: HomeProps) => {
+  const { socials } = props;
+
   return (
     <>
       <div className="h-full container mx-auto p-4 pt-16 pb-32 max-w-screen-lg flex items-center md:pt-32 md:pb-16 md:h-screen">
@@ -28,90 +27,37 @@ const Home: NextPage = () => {
               amet ligula
             </p>
             <Link href="/experience">
-              <a>
-                <button className="text-base font-bold border-4 border-rainbow px-8 py-3 mt-8 transform hover:-translate-y-2 sm:text-lg dark:text-white">
-                  Experience
-                </button>
-              </a>
+              <button className="text-base font-bold border-4 border-rainbow px-8 py-3 mt-8 transform hover:-translate-y-1 sm:text-lg dark:text-white">
+                Experience
+              </button>
             </Link>
             <div className="flex">
               <div className="w-1/12 my-auto pr-4 md:hidden">
                 <div className="border-4 border-black -ml-4 dark:border-white"></div>
               </div>
               <ul className="flex justify-center my-12 w-10/12 md:justify-start md:my-0 md:mt-12">
-                <li className="mx-auto md:mx-0 md:mr-6">
-                  <Link href="#github">
-                    <a className="dark:text-white">
-                      <FaGithub
-                        size={48}
-                        className="transform hover:scale-110"
-                      />
-                    </a>
-                  </Link>
-                </li>
-                <li className="mx-auto md:mx-0 md:mr-6">
-                  <Link href="#facebook">
-                    <a className="dark:text-white">
-                      <FaFacebook
-                        size={48}
-                        className="transform hover:scale-110"
-                      />
-                    </a>
-                  </Link>
-                </li>
-                <li className="mx-auto md:mx-0 md:mr-6">
-                  <Link href="#instagram">
-                    <a className="dark:text-white">
-                      <FaInstagram
-                        size={48}
-                        className="transform hover:scale-110"
-                      />
-                    </a>
-                  </Link>
-                </li>
-                <li className="mx-auto md:mx-0 md:mr-6">
-                  <Link href="#linkedin">
-                    <a className="dark:text-white">
-                      <FaLinkedin
-                        size={48}
-                        className="transform hover:scale-110"
-                      />
-                    </a>
-                  </Link>
-                </li>
-                <li className="mx-auto md:mx-0 md:mr-6">
-                  <Link href="#telegram">
-                    <a className="dark:text-white">
-                      <FaTelegram
-                        size={48}
-                        className="transform hover:scale-110"
-                      />
-                    </a>
-                  </Link>
-                </li>
+                {socials.map((item, index) => {
+                  return <SocialButton key={index} social={item} />;
+                })}
               </ul>
               <div className="w-1/12 my-auto pl-4 md:hidden">
                 <div className="border-4 border-black -mr-4 dark:border-white"></div>
               </div>
             </div>
           </div>
-          <div id="side" className="w-full md:w-1/4">
-            <Image
+          <div className="w-full md:w-1/4">
+            <img
               src="/img/profile.jpg"
-              height="100"
-              width="100%"
-              quality={100}
-              alt="Rigen Maulana Profile Picture"
-            ></Image>
+              className="mx-auto w-60 h-60 object-cover md:w-full md:h-60"
+              alt="Rigen Maulana Profile"
+            />
             <h4 className="text-lg font-bold mt-12 sm:text-xl dark:text-white">
               Any Question or Hiring .. ?
             </h4>
             <Link href="/">
-              <a>
-                <button className="text-base font-bold text-white bg-black px-8 py-3 mt-4 transform hover:-translate-y-2 sm:text-lg dark:bg-white dark:text-black">
-                  Contact Me .
-                </button>
-              </a>
+              <button className="text-base font-bold text-white bg-black px-8 py-3 mt-4 transform hover:-translate-y-1 sm:text-lg dark:bg-white dark:text-black">
+                Contact Me .
+              </button>
             </Link>
           </div>
         </div>
@@ -119,5 +65,15 @@ const Home: NextPage = () => {
     </>
   );
 };
+
+export async function getStaticProps() {
+  const socials = socialsJSON;
+
+  return {
+    props: {
+      socials,
+    },
+  };
+}
 
 export default Home;

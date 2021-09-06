@@ -1,5 +1,5 @@
-import CardProject from "../components/page/projects/CardProject";
 import projectsJSON from "../data/projects.json";
+import ProjectCard from "../components/projects/ProjectCard";
 
 interface ProjectsProps {
   projects: Array<any>;
@@ -17,9 +17,9 @@ const Home = (props: ProjectsProps) => {
         <div className="flex flex-col mt-12">
           {projects.map((item, index) => {
             if (index % 2 == 0) {
-              return <CardProject key={index} project={item} layout={false} />;
+              return <ProjectCard key={index} project={item} layout={false} />;
             } else {
-              return <CardProject key={index} project={item} layout={true} />;
+              return <ProjectCard key={index} project={item} layout={true} />;
             }
           })}
         </div>

@@ -20,27 +20,4 @@
   * {
     @apply transition-all;
   }
-
-  #side img {
-    @apply object-cover;
-    @apply w-60;
-    @apply h-60;
-    @apply md:w-full;
-    @apply md:h-60;
-  }
-
-  .card__image img {
-    @apply object-cover;
-    @apply h-56;
-    @apply sm:h-72;
-    @apply md:h-60;
-    @apply w-full;
-    @apply rounded-tr-xl;
-    @apply rounded-tl-xl;
-    @apply md:rounded-xl;
-  }
-
-  .card__image div {
-    @apply w-full;
-  }
 }
