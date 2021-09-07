@@ -30,7 +30,7 @@ const Navbar = () => {
     }
   };
 
-  const onToggleClick = () => {
+  const initDarkTheme = () => {
     const body = document.querySelector("body");
 
     if (darkTheme) {
@@ -62,6 +62,8 @@ const Navbar = () => {
     if (window.innerWidth) {
       setScreenWidht(window.innerWidth);
     }
+
+    initDarkTheme();
   }, []);
 
   if (screenWidht > 768) {
@@ -95,7 +97,7 @@ const Navbar = () => {
                 </ul>
                 <button
                   className="ml-8 dark:text-white"
-                  onClick={() => onToggleClick()}
+                  onClick={() => initDarkTheme()}
                 >
                   {darkTheme ? (
                     <FontAwesomeIcon
@@ -133,7 +135,7 @@ const Navbar = () => {
               {drawer ? (
                 <button
                   className="pr-4 py-4 dark:text-white"
-                  onClick={() => onToggleClick()}
+                  onClick={() => initDarkTheme()}
                 >
                   {darkTheme ? (
                     <FontAwesomeIcon
