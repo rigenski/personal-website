@@ -24,7 +24,7 @@ const SocialButton = (props: SocialProps) => {
       >
         <FontAwesomeIcon
           icon={["fab", social.name]}
-          className="transform fa-lg hover:-translate-y-1"
+          className="transform h-9 text-4xl hover:-translate-y-1 md:h-14 md:text-5xl"
         />
       </button>
     </li>

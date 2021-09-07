@@ -100,12 +100,12 @@ const Navbar = () => {
                   {darkTheme ? (
                     <FontAwesomeIcon
                       icon={["fas", "toggle-on"]}
-                      className="fa-lg"
+                      className="h-6 text-2xl"
                     />
                   ) : (
                     <FontAwesomeIcon
                       icon={["fas", "toggle-off"]}
-                      className="fa-lg"
+                      className="h-6 text-2xl"
                     />
                   )}
                 </button>
@@ -138,12 +138,12 @@ const Navbar = () => {
                   {darkTheme ? (
                     <FontAwesomeIcon
                       icon={["fas", "toggle-on"]}
-                      className="fa-lg"
+                      className="h-6 text-2xl"
                     />
                   ) : (
                     <FontAwesomeIcon
                       icon={["fas", "toggle-off"]}
-                      className="fa-lg"
+                      className="h-6 text-2xl"
                     />
                   )}
                 </button>
@@ -180,7 +180,10 @@ const Navbar = () => {
                 className="pl-4 py-4 dark:text-white"
                 onClick={() => onDrawerClick()}
               >
-                <FontAwesomeIcon icon={["fas", "bars"]} className="fa-lg" />
+                <FontAwesomeIcon
+                  icon={["fas", "bars"]}
+                  className="h-6 text-2xl"
+                />
               </button>
             </div>
           </div>

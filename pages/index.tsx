@@ -35,7 +35,7 @@ const Home = (props: HomeProps) => {
               <div className="w-1/12 my-auto pr-4 md:hidden">
                 <div className="border-4 border-black -ml-4 dark:border-white"></div>
               </div>
-              <ul className="flex justify-center my-12 w-10/12 md:justify-start md:my-0 md:mt-12">
+              <ul className="flex justify-center my-12 w-10/12 md:justify-start md:my-0 md:mt-8">
                 {socials.map((item, index) => {
                   return <SocialButton key={index} social={item} />;
                 })}
