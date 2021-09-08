@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { useState } from "react";
 import SocialButton from "../components/home/SocialButton";
 import socialsJSON from "../data/socials.json";
 
@@ -24,8 +23,8 @@ const Home = (props: HomeProps) => {
             <p className="text-base font-base mt-8 sm:text-lg dark:text-white">
               My name is <b>Rigen Maulana</b>, you can call me <b>Rigen</b>. A
               Software Engineering Student at SMK Muhammadiyah 1 Sukoharjo. I
-              love exploring new technologies and now have 1,5 years of
-              experience in web development.
+              love exploring new Technologies and now have 1,5 years of
+              experience in <i>Web Development</i>.
             </p>
             <Link href="/experience">
               <button className="text-base font-bold border-4 border-rainbow px-8 py-3 mt-8 transform hover:-translate-y-1 sm:text-lg dark:text-white">

@@ -19,25 +19,25 @@ const Navbar = () => {
   const navlinks = navlinksJSON;
 
   const onDrawerClick = () => {
-    const body = document.querySelector("body");
+    const html = document.querySelector("html");
 
     if (drawer) {
-      body?.classList.remove("overflow-hidden");
+      html?.classList.remove("overflow-hidden");
       setDrawer(false);
     } else {
-      body?.classList.add("overflow-hidden");
+      html?.classList.add("overflow-hidden");
       setDrawer(true);
     }
   };
 
   const initDarkTheme = () => {
-    const body = document.querySelector("body");
+    const html = document.querySelector("html");
 
     if (darkTheme) {
-      body?.classList.remove("dark");
+      html?.classList.remove("dark");
       setDarkTheme(false);
     } else {
-      body?.classList.add("dark");
+      html?.classList.add("dark");
       setDarkTheme(true);
     }
   };

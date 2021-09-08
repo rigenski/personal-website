@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import Head from "next/head";
 import "devicon";
 import Navbar from "./nav/Navbar";
@@ -9,6 +9,12 @@ interface LayoutProps {
 
 const Layout = (props: LayoutProps) => {
   const { children } = props;
+
+  useEffect(() => {
+    const body = document.querySelector("body");
+
+    body?.classList.add("transition-all", "dark:bg-black");
+  }, []);
 
   return (
     <>
@@ -26,7 +32,7 @@ const Layout = (props: LayoutProps) => {
         />
       </Head>
       <Navbar />
-      <main className="h-full bg-white dark:bg-black">{children}</main>
+      <main className="h-full">{children}</main>
     </>
   );
 };
