@@ -83,20 +83,12 @@ const Navbar = () => {
 
   return (
     <>
-      {
-        /**
-         * Background Navigation
-         */
-        drawer && mobileScreen ? (
-          <div
-            id="bg__navbar"
-            className="fixed h-screen w-full z-30 bg-black bg-opacity-75"
-            onClick={() => onDrawerClick()}
-          ></div>
-        ) : (
-          ''
-        )
-      }
+      <div
+        className={`fixed h-screen w-full z-30 bg-black ${
+          drawer && mobileScreen ? 'bg-opacity-75' : 'bg-opacity-0'
+        }`}
+        onClick={() => onDrawerClick()}
+      ></div>
       <header
         className={`fixed w-full z-50 dark:bg-black ${
           mobileScreen
@@ -109,7 +101,7 @@ const Navbar = () => {
             mobileScreen ? 'md:py-6' : 'py-4'
           }`}
         >
-          <div className={`flex justify-between`}>
+          <div className={`flex justify-between bg-white dark:bg-black`}>
             {
               /**
                * Button DarkTheme
@@ -148,13 +140,16 @@ const Navbar = () => {
                 </Link>
               )
             }
-            {mobileScreen ? (
+            {
               /**
                * Navigation
                */
-              drawer ? (
+              mobileScreen ? (
                 <nav
-                  className={`block absolute w-full z-40 -ml-4 -mb-2 bottom-16 bg-white dark:bg-black`}
+                  className={`block absolute w-full -ml-4 -mb-2 bottom-16 bg-white transform ${
+                    drawer ? 'translate-y-0' : 'translate-y-64'
+                  } dark:bg-black`}
+                  style={{ zIndex: -10 }}
                 >
                   <ul className="flex flex-col w-full p-4 overflow-hidden items-end">
                     {navlinks.map((item, index) => {
@@ -174,46 +169,44 @@ const Navbar = () => {
                   </ul>
                 </nav>
               ) : (
-                ''
+                <nav className={`flex items-center overflow-hidden`}>
+                  <ul className={`flex items-end`}>
+                    {navlinks.map((item, index) => {
+                      return (
+                        <li key={index} className="ml-6">
+                          <Link href={item.url}>
+                            <a className="nav-link py-2 text-lg font-bold dark:text-white">
+                              {item.name}
+                            </a>
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  <button
+                    className="ml-8 dark:text-white"
+                    onClick={() => initDarkTheme()}
+                  >
+                    {
+                      /**
+                       * Icon DarkTheme
+                       */
+                      darkTheme ? (
+                        <FontAwesomeIcon
+                          icon={['fas', 'toggle-on']}
+                          className="h-6 text-2xl"
+                        />
+                      ) : (
+                        <FontAwesomeIcon
+                          icon={['fas', 'toggle-off']}
+                          className="h-6 text-2xl"
+                        />
+                      )
+                    }
+                  </button>
+                </nav>
               )
-            ) : (
-              <nav className={`flex items-center overflow-hidden`}>
-                <ul className={`flex items-end`}>
-                  {navlinks.map((item, index) => {
-                    return (
-                      <li key={index} className="ml-6">
-                        <Link href={item.url}>
-                          <a className="nav-link py-2 text-lg font-bold dark:text-white">
-                            {item.name}
-                          </a>
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-                <button
-                  className="ml-8 dark:text-white"
-                  onClick={() => initDarkTheme()}
-                >
-                  {
-                    /**
-                     * Icon DarkTheme
-                     */
-                    darkTheme ? (
-                      <FontAwesomeIcon
-                        icon={['fas', 'toggle-on']}
-                        className="h-6 text-2xl"
-                      />
-                    ) : (
-                      <FontAwesomeIcon
-                        icon={['fas', 'toggle-off']}
-                        className="h-6 text-2xl"
-                      />
-                    )
-                  }
-                </button>
-              </nav>
-            )}
+            }
             {
               /**
                * Button Show Navigation
