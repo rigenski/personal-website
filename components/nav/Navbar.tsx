@@ -1,164 +1,162 @@
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { library } from "@fortawesome/fontawesome-svg-core";
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faBars,
   faToggleOff,
   faToggleOn,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import navlinksJSON from "../../data/navlinks.json";
+} from '@fortawesome/free-solid-svg-icons';
+import navlinksJSON from '../../data/navlinks.json';
 
 library.add(faBars, faToggleOff, faToggleOn);
 
 const Navbar = () => {
+  const [width, setWidth] = useState(0);
+  const [scroll, setScroll] = useState(0);
+  const [mobileScreen, setMobileScreen] = useState(false);
+  const [darkTheme, setDarkTheme] = useState(true);
   const [drawer, setDrawer] = useState(false);
-  const [darkTheme, setDarkTheme] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
-  const [screenWidht, setScreenWidht] = useState(0);
   const navlinks = navlinksJSON;
 
   const onDrawerClick = () => {
-    const html = document.querySelector("html");
+    const html = document.querySelector('html');
 
     if (drawer) {
-      html?.classList.remove("overflow-hidden");
+      html?.classList.remove('overflow-hidden');
       setDrawer(false);
     } else {
-      html?.classList.add("overflow-hidden");
+      html?.classList.add('overflow-hidden');
       setDrawer(true);
     }
   };
 
   const initDarkTheme = () => {
-    const html = document.querySelector("html");
+    const html = document.querySelector('html');
 
     if (darkTheme) {
-      html?.classList.remove("dark");
+      html?.classList.remove('dark');
       setDarkTheme(false);
     } else {
-      html?.classList.add("dark");
+      html?.classList.add('dark');
       setDarkTheme(true);
     }
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setScrollY(window.pageYOffset);
+    window.addEventListener('scroll', () => {
+      const { pageYOffset } = window;
+
+      setScroll(pageYOffset);
     });
-  }, [scrollY]);
+  }, [scroll]);
 
   useEffect(() => {
-    if (screenWidht > 768 && drawer) {
+    if (mobileScreen && drawer) {
       onDrawerClick();
     }
 
-    window.addEventListener("resize", () => {
-      setScreenWidht(window.innerWidth);
+    window.addEventListener('resize', () => {
+      const { innerWidth } = window;
+
+      setWidth(innerWidth);
+
+      if (innerWidth < 768) {
+        setMobileScreen(true);
+      } else {
+        setMobileScreen(false);
+      }
     });
-  }, [screenWidht]);
+  }, [width]);
 
   useEffect(() => {
-    if (window.innerWidth) {
-      setScreenWidht(window.innerWidth);
-    }
+    const { innerWidth } = window;
 
-    initDarkTheme();
+    setWidth(innerWidth);
+
+    if (innerWidth < 768) {
+      setMobileScreen(true);
+    } else {
+      setMobileScreen(false);
+    }
   }, []);
 
-  if (screenWidht > 768) {
-    return (
-      <>
-        <header
-          className={`fixed w-full z-40 top-0 bottom-auto ${
-            scrollY > 10 ? "bg-white shadow-md dark:bg-black" : ""
-          }`}
-        >
-          <div className="container mx-auto px-4 py-6 max-w-screen-lg">
-            <div className="flex justify-between">
-              <Link href="/">
-                <a className="text-2xl font-bold leading-none dark:text-white">
-                  rygenzx
-                </a>
-              </Link>
-              <nav className="flex items-center overflow-hidden">
-                <ul className="flex items-end">
-                  {navlinks.map((item, index) => {
-                    return (
-                      <li key={index} className="ml-6">
-                        <Link href={item.url}>
-                          <a className="text-lg font-bold dark:text-white">
-                            {item.name}
-                          </a>
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-                <button
-                  className="ml-8 dark:text-white"
-                  onClick={() => initDarkTheme()}
-                >
-                  {darkTheme ? (
-                    <FontAwesomeIcon
-                      icon={["fas", "toggle-on"]}
-                      className="h-6 text-2xl"
-                    />
-                  ) : (
-                    <FontAwesomeIcon
-                      icon={["fas", "toggle-off"]}
-                      className="h-6 text-2xl"
-                    />
-                  )}
-                </button>
-              </nav>
-            </div>
-          </div>
-        </header>
-      </>
-    );
-  } else {
-    return (
-      <>
-        {drawer ? (
+  return (
+    <>
+      {
+        /**
+         * Background Navigation
+         */
+        drawer && mobileScreen ? (
           <div
             id="bg__navbar"
             className="fixed h-screen w-full z-30 bg-black bg-opacity-75"
             onClick={() => onDrawerClick()}
           ></div>
         ) : (
-          ""
-        )}
-        <header className="fixed w-full z-40 top-auto bottom-0 bg-white shadow-md dark:bg-black">
-          <div className="container mx-auto px-4 max-w-screen-lg md:py-6">
-            <div className="flex justify-between">
-              {drawer ? (
+          ''
+        )
+      }
+      <header
+        className={`fixed w-full z-50 dark:bg-black ${
+          mobileScreen
+            ? 'top-auto bottom-0 bg-white shadow-md'
+            : 'top-0 bottom-auto'
+        } ${scroll > 10 ? 'bg-white shadow-md dark:bg-black' : ''}`}
+      >
+        <div
+          className={`container mx-auto px-4  max-w-screen-lg ${
+            mobileScreen ? 'md:py-6' : 'py-4'
+          }`}
+        >
+          <div className={`flex justify-between`}>
+            {
+              /**
+               * Button DarkTheme
+               */
+              drawer ? (
                 <button
                   className="pr-4 py-4 dark:text-white"
                   onClick={() => initDarkTheme()}
                 >
-                  {darkTheme ? (
-                    <FontAwesomeIcon
-                      icon={["fas", "toggle-on"]}
-                      className="h-6 text-2xl"
-                    />
-                  ) : (
-                    <FontAwesomeIcon
-                      icon={["fas", "toggle-off"]}
-                      className="h-6 text-2xl"
-                    />
-                  )}
+                  {
+                    /**
+                     * Icon DarkTheme
+                     */
+                    darkTheme ? (
+                      <FontAwesomeIcon
+                        icon={['fas', 'toggle-on']}
+                        className="h-6 text-2xl"
+                      />
+                    ) : (
+                      <FontAwesomeIcon
+                        icon={['fas', 'toggle-off']}
+                        className="h-6 text-2xl"
+                      />
+                    )
+                  }
                 </button>
               ) : (
                 <Link href="/">
-                  <a className="text-2xl pr-4 py-4 font-bold leading-none dark:text-white">
+                  <a
+                    className={` font-bold leading-none dark:text-white ${
+                      mobileScreen ? 'text-2xl pr-4 py-4' : 'py-2 text-2xl'
+                    } `}
+                  >
                     rygenzx
                   </a>
                 </Link>
-              )}
-              {drawer ? (
-                <nav className="block absolute w-full -ml-4 -mb-2 bottom-16 bg-white dark:bg-black">
-                  <ul className="flex flex-col w-full p-4 items-end">
+              )
+            }
+            {mobileScreen ? (
+              /**
+               * Navigation
+               */
+              drawer ? (
+                <nav
+                  className={`block absolute w-full z-40 -ml-4 -mb-2 bottom-16 bg-white dark:bg-black`}
+                >
+                  <ul className="flex flex-col w-full p-4 overflow-hidden items-end">
                     {navlinks.map((item, index) => {
                       return (
                         <li key={index} className="w-full mt-3 text-center">
@@ -176,23 +174,69 @@ const Navbar = () => {
                   </ul>
                 </nav>
               ) : (
-                ""
-              )}
-              <button
-                className="pl-4 py-4 dark:text-white"
-                onClick={() => onDrawerClick()}
-              >
-                <FontAwesomeIcon
-                  icon={["fas", "bars"]}
-                  className="h-6 text-2xl"
-                />
-              </button>
-            </div>
+                ''
+              )
+            ) : (
+              <nav className={`flex items-center overflow-hidden`}>
+                <ul className={`flex items-end`}>
+                  {navlinks.map((item, index) => {
+                    return (
+                      <li key={index} className="ml-6">
+                        <Link href={item.url}>
+                          <a className="nav-link py-2 text-lg font-bold dark:text-white">
+                            {item.name}
+                          </a>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+                <button
+                  className="ml-8 dark:text-white"
+                  onClick={() => initDarkTheme()}
+                >
+                  {
+                    /**
+                     * Icon DarkTheme
+                     */
+                    darkTheme ? (
+                      <FontAwesomeIcon
+                        icon={['fas', 'toggle-on']}
+                        className="h-6 text-2xl"
+                      />
+                    ) : (
+                      <FontAwesomeIcon
+                        icon={['fas', 'toggle-off']}
+                        className="h-6 text-2xl"
+                      />
+                    )
+                  }
+                </button>
+              </nav>
+            )}
+            {
+              /**
+               * Button Show Navigation
+               */
+              mobileScreen ? (
+                <button
+                  className="pl-4 py-4 dark:text-white"
+                  onClick={() => onDrawerClick()}
+                >
+                  <FontAwesomeIcon
+                    icon={['fas', 'bars']}
+                    className="h-6 text-2xl"
+                  />
+                </button>
+              ) : (
+                ''
+              )
+            }
           </div>
-        </header>
-      </>
-    );
-  }
+        </div>
+      </header>
+    </>
+  );
 };
 
 export default Navbar;

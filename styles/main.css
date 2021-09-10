@@ -21,6 +21,27 @@
     @apply transition-all;
   }
 
+  .nav-link:after {
+    content: "";
+    @apply block;
+    @apply transition-all;
+    @apply transform;
+    @apply scale-x-0;
+    @apply border;
+    @apply border-b-2;
+    @apply border-black;
+    @apply dark:border-white;
+  }
+
+  .nav-link:hover:after {
+    @apply transform;
+    @apply scale-100;
+  }
+
+  .nav-link:after {
+    transform-origin: 0% 50%;
+  }
+
   ::-webkit-scrollbar {
     @apply w-2;
     @apply rounded;

@@ -4,7 +4,7 @@ import Document, {
   Head,
   Main,
   NextScript,
-} from "next/document";
+} from 'next/document';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -15,9 +15,9 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html className="dark">
         <Head />
-        <body>
+        <body className="transition-all dark:bg-black">
           <Main />
           <NextScript />
         </body>
