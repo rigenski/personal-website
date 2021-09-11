@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import SocialButton from "../components/home/SocialButton";
 import socialsJSON from "../data/socials.json";
 
@@ -45,20 +46,26 @@ const Home = (props: HomeProps) => {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-1/4">
-            <img
-              src="/img/profile.jpg"
-              className="mx-auto w-60 h-60 object-cover md:w-full md:h-60"
-              alt="Rigen Maulana Profile"
-            />
-            <h4 className="text-lg font-bold mt-12 sm:text-xl dark:text-white">
-              Any Question or Hiring .. ?
-            </h4>
-            <Link href="/" passHref>
-              <button className="text-base font-bold text-white bg-black px-8 py-3 mt-4 transform hover:-translate-y-1 sm:text-lg dark:bg-white dark:text-black">
-                Contact Me .
-              </button>
-            </Link>
+          <div className="w-full block flex-col justify-between md:flex md:w-1/4">
+            <div className="card__image-profile">
+              <Image
+                src="/img/profile.jpg"
+                height="720"
+                width="720"
+                alt="Rigen Maulana Profile Picture"
+                className="mx-auto"
+              />
+            </div>
+            <div>
+              <h4 className="text-lg font-bold mt-8 sm:text-xl dark:text-white">
+                Any Question or Hiring .. ?
+              </h4>
+              <Link href="/" passHref>
+                <button className="text-base font-bold text-white bg-black px-8 py-3 mt-4 transform hover:-translate-y-1 sm:text-lg dark:bg-white dark:text-black">
+                  Contact Me .
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -1,7 +1,8 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
+import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 
 library.add(faGithub, faLink);
 
@@ -23,21 +24,22 @@ const ProjectCard = (props: ProjectProps) => {
   const { layout, project } = props;
 
   return (
-    <div className="card__item flex flex-col mb-4 bg-white shadow-lg rounded-xl md:flex-row md:shadow-none md:mb-8 md:rounded-none dark:bg-black">
+    <div className="flex flex-col mb-4 bg-white shadow-lg rounded-xl md:flex-row md:shadow-none md:mb-8 md:rounded-none dark:bg-black">
       <div
-        className={`card__image w-full ${
-          layout ? 'order-1 md:order-2' : ''
+        className={`card__image-project w-full ${
+          layout ? "order-1 md:order-2" : ""
         }  md:w-2/5`}
       >
-        <img
-          src={project.image}
-          className=" object-cover h-56 sm:h-72 md:h-60 w-full rounded-tr-xl rounded-tl-xl md:rounded-xl"
-          alt={`${project.title} Project`}
+        <Image
+          src={`/img/projects/${project.image}`}
+          height={405}
+          width={720}
+          alt="Rigen Maulana Profile Picture"
         />
       </div>
       <div
         className={`w-full flex flex-col text-center justify-between p-4 ${
-          layout ? 'order-2 md:order-1 md:pr-8' : 'md:pl-8'
+          layout ? "order-2 md:order-1 md:pr-8" : "md:pl-8"
         }  md:w-3/5 md:text-left md:p-0 md:pb-2 `}
       >
         <div>
@@ -62,10 +64,10 @@ const ProjectCard = (props: ProjectProps) => {
         <div className="flex justify-center mt-2 md:justify-start md:mt-0">
           <button
             className="flex items-center bg-gray-800 px-4 py-2 rounded text-base font-medium mr-1 transform hover:-translate-y-1 md:mr-0 md:text-lg dark:bg-white"
-            onClick={() => window.open(project.github_url, '_blank')}
+            onClick={() => window.open(project.github_url, "_blank")}
           >
             <FontAwesomeIcon
-              icon={['fab', 'github']}
+              icon={["fab", "github"]}
               className="text-white h-4 text-base dark:text-black"
             />
             <span className="ml-2 text-white dark:text-black">GitHub</span>
@@ -73,10 +75,10 @@ const ProjectCard = (props: ProjectProps) => {
           <a target="_blank">
             <button
               className="flex items-center bg-gray-800  px-4 py-2 rounded text-base font-medium ml-1 transform hover:-translate-y-1 md:ml-2 md:text-lg dark:bg-white"
-              onClick={() => window.open(project.demo_url, '_blank')}
+              onClick={() => window.open(project.demo_url, "_blank")}
             >
               <FontAwesomeIcon
-                icon={['fas', 'link']}
+                icon={["fas", "link"]}
                 className="text-white h-4 text-base dark:text-black"
               />
               <span className="ml-2 text-white dark:text-black">Demo</span>

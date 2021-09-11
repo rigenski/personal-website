@@ -23,7 +23,7 @@
   }
 
   .nav-link:after {
-    content: '';
+    content: "";
     @apply block;
     @apply transition;
     @apply duration-300;
@@ -42,6 +42,29 @@
 
   .nav-link:after {
     transform-origin: 0% 50%;
+  }
+
+  .card__image-profile img {
+    @apply object-cover;
+    @apply w-60;
+    @apply h-60;
+    @apply md:w-full;
+    @apply md:h-60;
+  }
+
+  .card__image-project img {
+    @apply object-cover;
+    @apply h-56;
+    @apply sm:h-72;
+    @apply md:h-60;
+    @apply w-full;
+    @apply rounded-tr-xl;
+    @apply rounded-tl-xl;
+    @apply md:rounded-xl;
+  }
+
+  .card__image-project div {
+    @apply w-full;
   }
 
   ::-webkit-scrollbar {
