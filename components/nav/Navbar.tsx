@@ -85,7 +85,7 @@ const Navbar = () => {
     <>
       <div
         className={`fixed h-screen w-full z-30 bg-black ${
-          drawer && mobileScreen ? 'bg-opacity-75' : 'bg-opacity-0'
+          drawer && mobileScreen ? 'block bg-opacity-75' : 'hidden bg-opacity-0'
         }`}
         onClick={() => onDrawerClick()}
       ></div>
@@ -102,44 +102,38 @@ const Navbar = () => {
           }`}
         >
           <div className={`flex justify-between bg-white dark:bg-black`}>
-            {
-              /**
-               * Button DarkTheme
-               */
-              drawer ? (
-                <button
-                  className="pr-4 py-4 dark:text-white"
-                  onClick={() => initDarkTheme()}
-                >
-                  {
-                    /**
-                     * Icon DarkTheme
-                     */
-                    darkTheme ? (
-                      <FontAwesomeIcon
-                        icon={['fas', 'toggle-on']}
-                        className="h-6 text-2xl"
-                      />
-                    ) : (
-                      <FontAwesomeIcon
-                        icon={['fas', 'toggle-off']}
-                        className="h-6 text-2xl"
-                      />
-                    )
-                  }
-                </button>
-              ) : (
-                <Link href="/">
-                  <a
-                    className={` font-bold leading-none dark:text-white ${
-                      mobileScreen ? 'text-2xl pr-4 py-4' : 'py-2 text-2xl'
-                    } `}
-                  >
-                    rygenzx
-                  </a>
-                </Link>
-              )
-            }
+            <button
+              className={`absolute pr-4 py-4 transform dark:text-white ${
+                drawer ? 'translate-x-0' : '-translate-x-16'
+              }`}
+              onClick={() => initDarkTheme()}
+            >
+              {
+                /**
+                 * Icon DarkTheme
+                 */
+                darkTheme ? (
+                  <FontAwesomeIcon
+                    icon={['fas', 'toggle-on']}
+                    className="h-6 text-2xl"
+                  />
+                ) : (
+                  <FontAwesomeIcon
+                    icon={['fas', 'toggle-off']}
+                    className="h-6 text-2xl"
+                  />
+                )
+              }
+            </button>
+            <Link href="/">
+              <a
+                className={`font-bold leading-none transform dark:text-white ${
+                  mobileScreen ? 'text-2xl pr-4 py-4' : 'py-2 text-2xl'
+                } ${drawer ? 'translate-y-16' : 'translate-y-0'} `}
+              >
+                rygenzx
+              </a>
+            </Link>
             {
               /**
                * Navigation
@@ -209,7 +203,7 @@ const Navbar = () => {
             }
             {
               /**
-               * Button Show Navigation
+               * Drawer Navigation
                */
               mobileScreen ? (
                 <button

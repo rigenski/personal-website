@@ -18,13 +18,15 @@
 
 @layer base {
   * {
-    @apply transition-all;
+    @apply transition;
+    @apply duration-300;
   }
 
   .nav-link:after {
-    content: "";
+    content: '';
     @apply block;
-    @apply transition-all;
+    @apply transition;
+    @apply duration-300;
     @apply transform;
     @apply scale-x-0;
     @apply border;
@@ -53,6 +55,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-yellow-500;
+    @apply bg-black;
+    @apply dark:bg-white;
   }
 }
