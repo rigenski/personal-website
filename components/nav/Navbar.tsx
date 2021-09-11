@@ -88,7 +88,7 @@ const Navbar = () => {
           drawer && mobileScreen ? 'block bg-opacity-75' : 'hidden bg-opacity-0'
         }`}
         onClick={() => onDrawerClick()}
-      ></div>
+      />
       <header
         className={`fixed w-full z-50 dark:bg-black ${
           mobileScreen
@@ -101,7 +101,7 @@ const Navbar = () => {
             mobileScreen ? 'md:py-6' : 'py-4'
           }`}
         >
-          <div className={`flex justify-between bg-white dark:bg-black`}>
+          <div className="flex justify-between bg-white dark:bg-black">
             <button
               className={`absolute pr-4 py-4 transform dark:text-white ${
                 drawer ? 'translate-x-0' : '-translate-x-16'
@@ -146,36 +146,32 @@ const Navbar = () => {
                   style={{ zIndex: -10 }}
                 >
                   <ul className="flex flex-col w-full p-4 overflow-hidden items-end">
-                    {navlinks.map((item, index) => {
-                      return (
-                        <li key={index} className="w-full mt-3 text-center">
-                          <Link href={item.url}>
-                            <a
-                              className="text-base font-bold block py-2 border-2 border-black dark:text-white dark:border-white"
-                              onClick={() => onDrawerClick()}
-                            >
-                              {item.name}
-                            </a>
-                          </Link>
-                        </li>
-                      );
-                    })}
+                    {navlinks.map((item, index) => (
+                      <li key={index} className="w-full mt-3 text-center">
+                        <Link href={item.url}>
+                          <a
+                            className="text-base font-bold block py-2 border-2 border-black dark:text-white dark:border-white"
+                            onClick={() => onDrawerClick()}
+                          >
+                            {item.name}
+                          </a>
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </nav>
               ) : (
-                <nav className={`flex items-center overflow-hidden`}>
-                  <ul className={`flex items-end`}>
-                    {navlinks.map((item, index) => {
-                      return (
-                        <li key={index} className="ml-6">
-                          <Link href={item.url}>
-                            <a className="nav-link py-2 text-lg font-bold dark:text-white">
-                              {item.name}
-                            </a>
-                          </Link>
-                        </li>
-                      );
-                    })}
+                <nav className="flex items-center overflow-hidden">
+                  <ul className="flex items-end">
+                    {navlinks.map((item, index) => (
+                      <li key={index} className="ml-6">
+                        <Link href={item.url}>
+                          <a className="nav-link py-2 text-lg font-bold dark:text-white">
+                            {item.name}
+                          </a>
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                   <button
                     className="ml-8 dark:text-white"

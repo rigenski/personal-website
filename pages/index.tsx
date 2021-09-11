@@ -26,7 +26,7 @@ const Home = (props: HomeProps) => {
               love exploring new Technologies and now have 1,5 years of
               experience in <i>Web Development</i>.
             </p>
-            <Link href="/experience">
+            <Link href="/experience" passHref>
               <button className="text-base font-bold border-4 border-rainbow px-8 py-3 mt-8 transform hover:-translate-y-1 sm:text-lg dark:text-white">
                 Experience
               </button>
@@ -54,7 +54,7 @@ const Home = (props: HomeProps) => {
             <h4 className="text-lg font-bold mt-12 sm:text-xl dark:text-white">
               Any Question or Hiring .. ?
             </h4>
-            <Link href="/">
+            <Link href="/" passHref>
               <button className="text-base font-bold text-white bg-black px-8 py-3 mt-4 transform hover:-translate-y-1 sm:text-lg dark:bg-white dark:text-black">
                 Contact Me .
               </button>
