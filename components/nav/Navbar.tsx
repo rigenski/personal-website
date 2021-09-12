@@ -92,7 +92,7 @@ const Navbar = () => {
       />
       {/* HEADER */}
       <header
-        className={`fixed w-full z-50 dark:bg-black ${
+        className={`fixed w-full z-40 dark:bg-black ${
           mobileScreen
             ? "top-auto bottom-0 bg-white shadow-md"
             : "top-0 bottom-auto"
@@ -149,7 +149,7 @@ const Navbar = () => {
                     } dark:bg-black`
                   : "flex items-center overflow-hidden"
               }`}
-              style={mobileScreen ? { zIndex: -20 } : {}}
+              style={mobileScreen ? { zIndex: -10 } : {}}
             >
               <ul
                 className={`flex items-end ${

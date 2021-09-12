@@ -1,13 +1,31 @@
 [
     {
-        "title": "Jadoo Destination",
-        "desc": "Proin eget tortor risus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui ",
+        "title": "Nothing",
+        "desc": "Write down everything you think and save notepad easy, simple, fast and can be used anywhere you want",
+        "image": "nothing.jpg",
+        "github_url" : "https://github.com/rygenzx/nothing",
+        "demo_url" : "https://nothing-note.vercel.app/",
+        "tag": [
+            {
+                "name": "ReactJS"
+            },
+            {
+                "name": "TailwindCSS"
+            },
+            {
+                "name": "Firebase"
+            }
+        ]
+    },
+    {
+        "title": "Jadoo Destinations",
+        "desc": "Travel agency landing page for destination and advantages information",
         "image": "jadoo.jpg",
         "github_url" : "https://github.com/rygenzx/jadoo",
         "demo_url" : "https://jadoo-destinations.netlify.app/",
         "tag": [
             {
-                "name": "React"
+                "name": "ReactJS"
             },
             {
                 "name": "Styled Component"
@@ -15,26 +33,8 @@
         ]
     },
     {
-        "title": "Quisque velit nisi",
-        "desc": "Proin eget tortor risus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui ",
-        "image": "1.jpg",
-        "github_url" : "https://github.com/rygenzx",
-        "demo_url" : "https://rygenzx.github.io/",
-        "tag": [
-            {
-                "name": "HTML"
-            },
-            {
-                "name": "CSS"
-            },
-            {
-                "name": "JS"
-            }
-        ]
-    },
-    {
         "title": "Nulla quis lorem",
-        "desc": "Donec rutrum congue leo eget malesuada. Cras ultricies ligula sed magna dictum porta. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.",
+        "desc": "Donec rutrum congue leo eget malesuada. Cras ultricies ligula sed magna dictum porta ",
         "image": "2.jpg",
         "github_url" : "https://github.com/rygenzx",
         "demo_url" : "https://rygenzx.github.io/",
@@ -52,7 +52,7 @@
     },
     {
         "title": "Curabitur arcu erat",
-        "desc": "Vivamus suscipit tortor eget felis porttitor volutpat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit.",
+        "desc": "Vivamus suscipit tortor eget felis porttitor volutpat. Vivamus magna justo, lacinia eget consectetur sed",
         "image": "3.jpg",
         "github_url" : "https://github.com/rygenzx",
         "demo_url" : "https://rygenzx.github.io/",
@@ -70,8 +70,8 @@
     },
     {
         "title": "Mauris blandit aliquet",
-        "desc": "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Quisque velit nisi, pretium ut lacinia in, elementum id enim.",
-        "image": "3.jpg",
+        "desc": "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Quisque velit nisi, pretium ut lacinia",
+        "image": "4.jpg",
         "github_url" : "https://github.com/rygenzx",
         "demo_url" : "https://rygenzx.github.io/",
         "tag": [
@@ -88,8 +88,8 @@
     },
     {
         "title": "Quisque velit nisi",
-        "desc": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.",
-        "image": "3.jpg",
+        "desc": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec ",
+        "image": "5.jpg",
         "github_url" : "https://github.com/rygenzx",
         "demo_url" : "https://rygenzx.github.io/",
         "tag": [
@@ -106,8 +106,8 @@
     },
     {
         "title": "Sed porttitor lectus nibh",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
-        "image": "3.jpg",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies ligula sed magna dictum porta.",
+        "image": "6.jpg",
         "github_url" : "https://github.com/rygenzx",
         "demo_url" : "https://rygenzx.github.io/",
         "tag": [
