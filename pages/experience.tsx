@@ -1,10 +1,10 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faTrophy } from '@fortawesome/free-solid-svg-icons';
-import SkillCard from '../components/experience/SkillCard';
-import skillsJSON from '../data/skills.json';
-import achievementsJSON from '../data/achievements.json';
-import worksJSON from '../data/works.json';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faTrophy } from "@fortawesome/free-solid-svg-icons";
+import SkillCard from "../components/experience/SkillCard";
+import skillsJSON from "../data/skills.json";
+import achievementsJSON from "../data/achievements.json";
+import worksJSON from "../data/works.json";
 
 library.add(faTrophy);
 
@@ -35,7 +35,7 @@ const Experience = (props: ExperienceProps) => {
                   {works.map((item, index) => {
                     return (
                       <li key={index} className="mb-4">
-                        <div className="flex items-center mb-0.5">
+                        <div className="flex mb-0.5">
                           <div className="bg-black rounded-full h-6 w-6 dark:bg-white" />
                           <h6 className="text-lg ml-4 font-semibold md:text-xl md:ml-4 dark:text-white">
                             {item.date} | {item.title} - {item.position}
@@ -64,7 +64,7 @@ const Experience = (props: ExperienceProps) => {
                             {item.name}
                           </h6>
                           <FontAwesomeIcon
-                            icon={['fas', 'trophy']}
+                            icon={["fas", "trophy"]}
                             className="order-1 h-6 text-2xl sm:order-2 text-yellow-500"
                           />
                         </div>

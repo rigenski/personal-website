@@ -65,6 +65,11 @@
 
   .card__image-project div {
     @apply w-full;
+    @apply shadow-none;
+    @apply md:shadow;
+    @apply rounded-tr-xl;
+    @apply rounded-tl-xl;
+    @apply md:rounded-xl;
   }
 
   ::-webkit-scrollbar {
