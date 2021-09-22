@@ -48,8 +48,8 @@
         "title": "Pickomon",
         "desc": "List of Pokemon specifically for knowledge and if you like it you can add it to favorites",
         "image": "pickomon.jpg",
-        "github_url" : "https://github.com/rygenzx/jadoo",
-        "demo_url" : "https://jadoo-destinations.netlify.app/",
+        "github_url" : "https://github.com/rygenzx/pickomon",
+        "demo_url" : "https://pickomon.vercel.app/",
         "tag": [
             {
                 "name": "ReactJS"
