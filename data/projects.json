@@ -1,5 +1,17 @@
 [
     {
+        "title": "Systime",
+        "desc": "Set your work or study time with a pomodoro timer that can be adjusted to your needs and record your tasks in the todo so you don't forget",
+        "image": "systime.jpg",
+        "github_url" : "https://github.com/rygenzx/systime",
+        "demo_url" : "https://systime.vercel.app/",
+        "tag": [
+            {
+                "name": "NextJS"
+            }
+        ]
+    },
+    {
         "title": "Nothing",
         "desc": "Write down everything you think and save notepad easy, simple, fast and can be used anywhere you want",
         "image": "nothing.jpg",
@@ -33,92 +45,17 @@
         ]
     },
     {
-        "title": "Nulla quis lorem",
-        "desc": "Donec rutrum congue leo eget malesuada. Cras ultricies ligula sed magna dictum porta ",
-        "image": "2.jpg",
-        "github_url" : "https://github.com/rygenzx",
-        "demo_url" : "https://rygenzx.github.io/",
+        "title": "Pickomon",
+        "desc": "List of Pokemon specifically for knowledge and if you like it you can add it to favorites",
+        "image": "pickomon.jpg",
+        "github_url" : "https://github.com/rygenzx/jadoo",
+        "demo_url" : "https://jadoo-destinations.netlify.app/",
         "tag": [
             {
-                "name": "React"
+                "name": "ReactJS"
             },
             {
-                "name": "Next"
-            },
-            {
-                "name": "Tailwind"
-            }
-        ]
-    },
-    {
-        "title": "Curabitur arcu erat",
-        "desc": "Vivamus suscipit tortor eget felis porttitor volutpat. Vivamus magna justo, lacinia eget consectetur sed",
-        "image": "3.jpg",
-        "github_url" : "https://github.com/rygenzx",
-        "demo_url" : "https://rygenzx.github.io/",
-        "tag": [
-            {
-                "name": "PHP"
-            },
-            {
-                "name": "NodeJS"
-            },
-            {
-                "name": "Golang"
-            }
-        ]
-    },
-    {
-        "title": "Mauris blandit aliquet",
-        "desc": "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Quisque velit nisi, pretium ut lacinia",
-        "image": "4.jpg",
-        "github_url" : "https://github.com/rygenzx",
-        "demo_url" : "https://rygenzx.github.io/",
-        "tag": [
-            {
-                "name": "PHP"
-            },
-            {
-                "name": "NodeJS"
-            },
-            {
-                "name": "Golang"
-            }
-        ]
-    },
-    {
-        "title": "Quisque velit nisi",
-        "desc": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec ",
-        "image": "5.jpg",
-        "github_url" : "https://github.com/rygenzx",
-        "demo_url" : "https://rygenzx.github.io/",
-        "tag": [
-            {
-                "name": "PHP"
-            },
-            {
-                "name": "NodeJS"
-            },
-            {
-                "name": "Golang"
-            }
-        ]
-    },
-    {
-        "title": "Sed porttitor lectus nibh",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies ligula sed magna dictum porta.",
-        "image": "6.jpg",
-        "github_url" : "https://github.com/rygenzx",
-        "demo_url" : "https://rygenzx.github.io/",
-        "tag": [
-            {
-                "name": "PHP"
-            },
-            {
-                "name": "NodeJS"
-            },
-            {
-                "name": "Golang"
+                "name": "TailwindCSS"
             }
         ]
     }
