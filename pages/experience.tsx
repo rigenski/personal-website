@@ -1,10 +1,10 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faTrophy } from "@fortawesome/free-solid-svg-icons";
-import SkillCard from "../components/experience/SkillCard";
-import skillsJSON from "../data/skills.json";
-import achievementsJSON from "../data/achievements.json";
-import worksJSON from "../data/works.json";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faTrophy } from '@fortawesome/free-solid-svg-icons';
+import SkillCard from '../components/experience/SkillCard';
+import skillsJSON from '../data/skills.json';
+import achievementsJSON from '../data/achievements.json';
+import worksJSON from '../data/works.json';
 
 library.add(faTrophy);
 
@@ -64,7 +64,7 @@ const Experience = (props: ExperienceProps) => {
                             {item.name}
                           </h6>
                           <FontAwesomeIcon
-                            icon={["fas", "trophy"]}
+                            icon={['fas', 'trophy']}
                             className="order-1 h-6 text-2xl sm:order-2 text-yellow-500"
                           />
                         </div>
